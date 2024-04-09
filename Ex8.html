@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+</head>
+<body>
+	<p><h3>Insira dois número para calcular a soma dos mesmos:</h3></p>
+	<p>Primeiro número:</p>
+    <input type="text" id="numero1" placeholder="Digite o primeiro número">
+	<p>Segundo número:</p>
+    <input type="text" id="numero2" placeholder="Digite o segundo número">
+	<br></br>
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    
+    <script>
+        function calcularSoma() {
+            var num1 = parseFloat(document.getElementById("numero1").value);
+            var num2 = parseFloat(document.getElementById("numero2").value);
+            var resultado = num1 + num2
+            alert("A soma é: " + resultado);
+        }
+    </script>
+</body>
+</html>

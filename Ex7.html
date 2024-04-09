@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+</head>
+<body>
+	<h3>Escreva algo para ser colocado em caixa alta:</h3>
+    <input type="text" id="inputTexto" placeholder="Digite a palavra">
+    <button onclick="converterParaCaixaAlta()">Converter</button>
+    
+    <script>
+        function converterParaCaixaAlta() {
+            var inputTexto = document.getElementById("inputTexto").value;
+            var textoConvertido = inputTexto.toUpperCase();
+            alert("Texto em caixa alta: " + textoConvertido);
+        }
+    </script>
+</body>
+</html>

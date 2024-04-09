@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+<body>
+    <h2>Exemplos de Funções no JavaScript</h2>
+    <p>Insira dois números para realizar diferentes operações:</p>
+    <form id="formCalculadora">
+        <label for="numero1">Número 1:</label>
+        <input type="number" id="numero1" name="numero1" required>
+        <br><br>
+        <label for="numero2">Número 2:</label>
+        <input type="number" id="numero2" name="numero2" required>
+        <br><br>
+        <button type="button" onclick="exibirResultados()">Calcular</button>
+    </form>
+
+    <script>
+        // Função Nomeada
+        function saudacao() {
+            return "Seja bem-vindo(a)!";
+        }
+
+        // Função Nomeada com argumento(Parametro) e retorno
+        function soma(a, b) {
+            return a + b;
+        }
+
+        // Função com Construtor
+        var quadrado = new Function("x", "return x * x");
+
+        // Função Literal (variável)
+        var subtracao = function(a, b) {
+            return a - b;
+        };
+
+        // Função de Flecha (Arrow functions)
+        var multiplicacao = (a, b) => a * b;
+
+        // Função para exibir os resultados no alert
+        function exibirResultados() {
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+
+            // Chamando todas as funções e exibindo os resultados em um alert
+            alert("Saudação: " + saudacao() + "\n" +
+                  "Soma: " + soma(numero1, numero2) + "\n" +
+                  "Quadrado: " + quadrado(numero1) + "\n" +
+                  "Subtração: " + subtracao(numero1, numero2) + "\n" +
+                  "Multiplicação: " + multiplicacao(numero1, numero2));
+        }
+    </script>
+</body>
+</html>

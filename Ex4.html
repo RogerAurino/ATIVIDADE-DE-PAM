@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 4</title>
+    <style>
+        .destacado {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h3>Selecione uma das opções e depois passe o mouse encima do texto para mudar de cor!!!</h3>
+
+    <!-- Aqui é onde ocorrerão os eventos -->
+    <select id="select" onchange="mostrarSelecao()" onfocus="destacarCampo()">
+        <option value="opcao1">Opção 1</option>
+        <option value="opcao2">Opção 2</option>
+        <option value="opcao3">Opção 3</option>
+    </select>
+	<br></br>
+	<br></br>
+    <p id="resultado" onmouseover="mudarCor()"></p>
+
+    <script>
+		// Exemplo de onmouseover
+        // Função para mudar a cor quando o mouse passa sobre o elemento
+        function mudarCor() {
+            document.getElementById("resultado").style.color = "blue";
+        }
+
+        // Exemplo de onfocus
+		// Função para destacar o campo quando recebe foco
+        function destacarCampo() {
+            document.getElementById("select").classList.add("destacado");
+        }
+
+        // Exemplo de onchange
+		// Função para mostrar a opção selecionada
+        function mostrarSelecao() {
+            var selecionado = document.getElementById("select").value;
+            document.getElementById("resultado").innerText = "Opção selecionada: " + selecionado;
+			document.getElementById("resultado").style.color = "black";
+        }
+    </script>
+</body>
+</html>

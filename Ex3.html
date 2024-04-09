@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 3</title>
+</head>
+<body>
+    <!-- Exemplo de getElementById 
+    Retorna um elemento HTML que possui o ID especificado-->
+    <div id="Elemento1" onmouseover="mOver()" onmouseout="mOut()">Passe o mouse por cima do texto</div>
+
+    <!-- Exemplo de getElementsByTagName 
+    retorna uma coleção de todos os elementos com o nome de tag especificado.-->
+    <p>Exemplo pela tag</p>
+    <p>Parágrafo 2</p>
+    <p>Parágrafo 3</p>
+
+    <!-- Exemplo de getElementsByClassName 
+    Retorna uma coleção de todos os elementos que têm a classe especificada-->
+    <div class="minhaClasse" onmouseover="classOver(this)" onmouseout="classOut(this)">Exemplo pela class</div>
+    <div class="minhaClasse" onmouseover="classOver(this)" onmouseout="classOut(this)">Exemplo pela class</div>
+    <div class="minhaClasse" onmouseover="classOver(this)" onmouseout="classOut(this)">Exemplo pela class</div>
+
+    <!-- Exemplo de querySelector 
+    Retorna o primeiro elemento dentro do documento que corresponde ao seletor especificado.-->
+    <div class="container" id="container" onmouseover="queryOver()" onmouseout="queryOut()">
+        <p>Exemplo de QuerySelector</p>
+    </div>
+
+    <!-- Exemplo de querySelectorAll 
+    Retorna todos os elementos dentro do documento que correspondem ao seletor especificado, como uma NodeList-->
+    <ul>
+        <li>Exemplo do QuerySelectorAll</li>
+        <li>Clique em um dos elementos da lista</li>
+        <li>E veja o exemplo.</li>
+    </ul>
+
+    <script>
+        // Exemplo de getElementById
+        function mOver() {
+            document.getElementById("Elemento1").innerHTML = "Esse foi um exemplo com o Id";
+        }
+        function mOut() {
+            document.getElementById("Elemento1").innerHTML = "Passe o mouse por cima do texto";
+        }
+
+        // Exemplo de getElementsByTagName
+        var paragraphs = document.getElementsByTagName("p");
+		function changeColorOnHover(event) {
+			if (event.type === "mouseover") {
+				this.style.color = "red";
+			} else if (event.type === "mouseout") {
+				this.style.color = "black";
+			}
+		}
+
+		for (var i = 0; i < paragraphs.length; i++) {
+			paragraphs[i].addEventListener("mouseover", changeColorOnHover);
+			paragraphs[i].addEventListener("mouseout", changeColorOnHover);
+		}
+
+        // Exemplo de getElementsByClassName
+        function classOver(element) {
+            element.innerHTML = "Mouse sobre a classe";
+        }
+        function classOut(element) {
+            element.innerHTML = "Exemplo pela class";
+        }
+
+        // Exemplo de querySelector
+        function queryOver() {
+            document.querySelector("#container").style.backgroundColor = "yellow";
+        }
+        function queryOut() {
+            document.querySelector("#container").style.backgroundColor = "";
+        }
+
+        // Exemplo de querySelectorAll
+        var listItems = document.querySelectorAll("li");
+        listItems.forEach(function (item) {
+            item.addEventListener("click", function () {
+                alert("Clicou em: " + this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
